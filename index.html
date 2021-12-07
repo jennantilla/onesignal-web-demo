@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "563e8da3-128e-479d-bc6f-2b80b38eb751",
+    });
+  });
+</script>
+    <link rel="stylesheet" href="modal.css">
+<title>Notifications Testing</title>
+</head>
+    
+<body>
+    <h1>Notification Testing</h1>
+<!--     <a href="path1.html">Another page</a> -->
+<img src="moutain.jpeg">
+    <h3>Tagging</h3>
+    <div>
+    <button id="tag-btn">click to tag yourself!</button>
+    </div>
+    
+    <div>
+    <button id="untag-btn">click to untag yourself</button>
+    </div>
+    
+    <div>
+    <button id="outcome-btn">click to send outcome</button>
+    </div>
+    
+    <!-- Trigger/Open The Modal -->
+    <h3>Modal to Subscribe with Link</h3>
+<button id="myBtn">Open</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Hello!</p>
+    <div class='onesignal-customlink-container'></div>
+  </div>
+
+</div>
+    
+    <script>
+        const tagUser = document.getElementById("tag-btn");
+tagUser.addEventListener("click", () => {
+    OneSignal.push(function() {            
+        OneSignal.sendTags({
+                clicked: "true",
+                tag2: "true",
+                }).then(function (tagsSent) {
+                console.log(tagsSent);
+                });
+    });
+})
+    const untagUser = document.getElementById("untag-btn");
+        untagUser.addEventListener("click", () => {
+            OneSignal.push(function () {
+                OneSignal.sendTags({
+                clicked: "",
+                }).then(function (tagsSent) {
+                console.log(tagsSent);
+                });
+            });
+        });
+        
+        const outcome = document.getElementById("outcome-btn");
+        outcome.addEventListener("click", () => {
+            OneSignal.push(function () {
+                console.log("button clicked!");
+                OneSignal.sendOutcome("clickedButton");
+                console.log("Outcome sent!");
+            });
+        });
+    </script>
+    
+    <script>
+        // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+        
+        // Example from Stackoverflow: https://stackoverflow.com/questions/11219582/how-to-detect-my-browser-version-and-operating-system-using-javascript
+var os = "Unknown OS";
+if (navigator.userAgent.indexOf("Win") != -1) os = "Windows";
+if (navigator.userAgent.indexOf("Mac") != -1) os = "Macintosh";
+if (navigator.userAgent.indexOf("Linux") != -1) os = "Linux";
+if (navigator.userAgent.indexOf("Android") != -1) os = "Android";
+if (navigator.userAgent.indexOf("like Mac") != -1) os = "iOS";
+console.log('Your os: ' + os);
+
+var browserType = "Unknown Browser Type";
+if (navigator.userAgent.indexOf("Safari") != -1) browserType = "Safari";
+if (navigator.userAgent.indexOf("Chrome") != -1) browserType = "Chrome";
+if (navigator.userAgent.indexOf("OPR") != -1) browserType = "Opera";
+if (navigator.userAgent.indexOf("Firefox") != -1) browserType = "Firefox";
+console.log('Your Browser: ' + browserType);
+
+OneSignal.push(function() {
+  OneSignal.sendTags({
+    os: os,
+    browserType: browserType,
+  }).then(function(tagsSent) {
+    // Callback called when tags have finished sending 
+    console.log("tagsSent: ", tagsSent);
+  });
+});
+    </script>
+
+</body>
+</html>
