@@ -50,8 +50,23 @@
 </div>
     
     <script>
+        
+        
+        
+        const bellBtn = document.getElementsByClassName("onesignal-bell-launcher-button");
+tagUser.addEventListener("
+                         ", () => {
+    OneSignal.push(function() { 
+    console.log("show Categories!");
+        OneSignal.showCategorySlidedown();
+    });
+})
+        
+        
+        
         const tagUser = document.getElementById("tag-btn");
-tagUser.addEventListener("click", () => {
+tagUser.addEventListener("
+                         ", () => {
     OneSignal.push(function() {            
         OneSignal.sendTags({
                 clicked: "true",
