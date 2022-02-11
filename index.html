@@ -56,8 +56,8 @@
         
         
         const bellBtn = document.getElementsById("bell-img");
-bellBtn.addEventListener("
-                         ", () => {
+bellBtn.addEventListener("click", () => {
+            OneSignal.push(function () {
     OneSignal.push(function() { 
     console.log("show Categories!");
         OneSignal.showCategorySlidedown();
@@ -67,8 +67,7 @@ bellBtn.addEventListener("
         
         
         const tagUser = document.getElementById("tag-btn");
-tagUser.addEventListener("
-                         ", () => {
+tagUser.addEventListener("click", () => {
     OneSignal.push(function() {            
         OneSignal.sendTags({
                 clicked: "true",
