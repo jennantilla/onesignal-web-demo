@@ -55,12 +55,13 @@
         
         
         
-        const bellBtn = document.getElementsById("bell-img");
-        bellBtn.addEventListener("click", () => {
+        const bellBtn = document.getElementById("bell-img");
+        bellBtn.onclick = function() {
             OneSignal.push(function() {
                 OneSignal.showCategorySlidedown();
             });
-        })
+        });
+        }
 
         
         
