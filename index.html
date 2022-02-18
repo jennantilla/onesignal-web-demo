@@ -91,7 +91,7 @@ tagUser.addEventListener("click", () => {
         outcome.addEventListener("click", () => {
             OneSignal.push(function () {
                 console.log("button clicked!");
-                OneSignal.sendOutcome("webOutcome");
+                OneSignal.sendOutcome("newWebOutcome");
                 console.log("Outcome sent!");
             });
         });
