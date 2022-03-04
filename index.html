@@ -21,7 +21,6 @@
     
 <body>
     <h1>Welcome!</h1>
-    <h2>Your Player ID is</h2><h3>%= @player %</h3>
     <div>
         <a href="path1.html">Another page</a>
     </div>
@@ -69,9 +68,6 @@
 
 </div>
 <script>
-    
-const player = OneSignal.getUserId();
-
 const bellBtn = document.getElementById("bell-img");
         bellBtn.onclick = function() {
             OneSignal.push(function() {
