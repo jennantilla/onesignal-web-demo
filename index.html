@@ -108,7 +108,6 @@
     tagUser.addEventListener("click", () => {
         const fName = document.getElementById("fname").value;
         const lName = document.getElementById("lname").value;
-        console.log("first name: ", fName);
         OneSignal.push(function () {
             OneSignal.sendTags({
             fName: fName,
