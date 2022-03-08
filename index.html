@@ -48,17 +48,11 @@
             <input type="radio" id="chocolate" name="fav_icecream" value="chocolate">
             <label for="css">Chocolate</label><br>
             <input type="radio" id="strawberry" name="fav_icecream" value="strawberry">
-            <label for="javascript">Strawberry</label>
+            <label for="javascript">Strawberry</label><br>
             <input type="radio" id="other" name="fav_icecream" value="other">
-            <label for="javascript">There's more than 3 types of ice cream, silly</label>
+            <label for="javascript">There's more than 3 types of ice cream, silly</label><br>
+            <input type="submit">
         </form>
-        <div>
-            <button id="outcome-btn">click to tag yourself!</button>
-        </div>
-    </div>
-    
-    <div>
-    <button id="outcome-btn">click to send outcome</button>
     </div>
     
     <!-- Modal with Custom Link -->
@@ -79,7 +73,7 @@
 
     <!-- Subscribe image -->
     <div>
-        <img id="bell-img" src="https://i.pinimg.com/originals/89/2f/52/892f52ae55d6ad7c402c16ed4d00bc07.gif">
+        <img id="bell-img" src="https://i.pinimg.com/originals/89/2f/52/892f52ae55d6ad7c402c16ed4d00bc07.gif" width= "50">
     </div>
     <script>
     // Modal JS
@@ -149,8 +143,8 @@
     });
 
     // Send Outcome
-    const outcome = document.getElementById("outcome-btn");
-    outcome.addEventListener("click", () => {
+    const outcome = document.getElementById("voteOutcomes");
+    outcome.addEventListener("submit", () => {
         const voteResult = document.getElementById("voteOutcomes").value;
         console.log(voteResult);
         OneSignal.push(function () {
