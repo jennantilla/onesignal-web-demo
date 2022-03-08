@@ -57,6 +57,7 @@
             <label for="javascript">There are more than 3 types of ice cream, silly</label><br>
             <input type="submit">
         </form>
+        <h4 id="results"></h4>
     </div>
     
     <!-- Modal with Custom Link -->
@@ -147,7 +148,9 @@
         const voteResult = document.getElementsByName('fav_icecream');
         for(i = 0; i < voteResult.length; i++) {
                 if(voteResult[i].checked)
-                OneSignal.push(function () {
+                    document.getElementById("results").innerHTML
+                        = "Fave Ice Cream: " + voteResult[i].value;
+                    OneSignal.push(function () {
                     OneSignal.sendOutcome(voteResult[i]).value;
                 });
         };
