@@ -149,7 +149,7 @@
         console.log(voteResult);
         OneSignal.push(function () {
             console.log("button clicked!");
-            OneSignal.sendOutcome("voteResult");
+            OneSignal.sendOutcome(voteResult);
             console.log("Outcome sent!");
         });
     });
