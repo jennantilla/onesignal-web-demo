@@ -103,24 +103,24 @@
         });
     }        
 
-    // Tag User        
-    const tagUser = document.getElementById("tag-btn");
-    tagUser.addEventListener("click", () => {
-    OneSignal.push(function() {            
-        OneSignal.sendTags({
-                fName: "true",
-                lName: "true",
-                }).then(function (tagsSent) {
-                console.log(tagsSent);
-                });
+    // Tag User with first and last names      
+    const untagUser = document.getElementById("untag-btn");
+    const fName = document.getElementById("fname").value;
+    const lName = document.getElementById("lname").value;
+    console.log("first name: ", fName);
+    untagUser.addEventListener("click", () => {
+        OneSignal.push(function () {
+            OneSignal.sendTags({
+            fName: "",
+            lName: "",
+            }).then(function (tagsSent) {
+            console.log(tagsSent);
+            });
         });
-    })
-    
+    });
+        
     // Remove Tags
     const untagUser = document.getElementById("untag-btn");
-    const fName = document.getElementById("fname");
-    const lName = document.getElementById("lname");
-    console.log("first name: ", fName);
     untagUser.addEventListener("click", () => {
         OneSignal.push(function () {
             OneSignal.sendTags({
