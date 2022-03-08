@@ -21,7 +21,7 @@
     <h1>Welcome!</h1>
     <!-- Subscribe image -->
     <div>
-        <img id="bell-img" src="https://i.pinimg.com/originals/89/2f/52/892f52ae55d6ad7c402c16ed4d00bc07.gif" width= "100">
+        <img id="bell-img" src="https://i.pinimg.com/originals/89/2f/52/892f52ae55d6ad7c402c16ed4d00bc07.gif" width= "150">
     </div>
     <div>
         <a href="path1.html">Another page</a>
@@ -148,7 +148,8 @@
         for(i = 0; i < voteResult.length; i++) {
                 if(voteResult[i].checked)
                 OneSignal.push(function () {
-                OneSignal.sendOutcome(voteResult[i]).value;
+                    OneSignal.sendOutcome(voteResult[i]).value;
+                });
         });
     });
 
