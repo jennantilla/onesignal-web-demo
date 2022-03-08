@@ -29,8 +29,10 @@
             <input type="text" id="fname" name="fname"><br>
             <label for="lname">Last name:</label><br>
             <input type="text" id="lname" name="lname">
-            <input type="submit">
         </form>
+        <div>
+            <button id="tag-btn">click to tag yourself!</button>
+        </div>
     </div>
     
     <div>
@@ -102,22 +104,23 @@
     }        
 
     // Tag User        
-    document.getElementById("nameTags").onsubmit = function() { 
-    const fName = document.getElementById("fname").value;
-    const lName = document.getElementById("lname").value;
-        console.log(lName);
+    const tagUser = document.getElementById("tag-btn");
+    tagUser.addEventListener("click", () => {
     OneSignal.push(function() {            
         OneSignal.sendTags({
-                fName: fName,
-                lName: lName,
+                fName: "true",
+                lName: "true",
                 }).then(function (tagsSent) {
                 console.log(tagsSent);
                 });
         });
-    };
+    })
     
     // Remove Tags
     const untagUser = document.getElementById("untag-btn");
+    const fName = document.getElementById("fname");
+    const lName = document.getElementById("lname");
+    console.log("first name: ", fName);
     untagUser.addEventListener("click", () => {
         OneSignal.push(function () {
             OneSignal.sendTags({
