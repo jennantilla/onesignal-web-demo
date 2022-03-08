@@ -145,12 +145,12 @@
     // Send Outcome
     const outcome = document.getElementById("voteOutcomes");
     outcome.addEventListener("submit", () => {
-        const voteResult = document.getElementById("voteOutcomes").value;
-        console.log(voteResult);
-        OneSignal.push(function () {
-            console.log("button clicked!");
-            OneSignal.sendOutcome(voteResult);
-            console.log("Outcome sent!");
+        const voteResult = document.getElementsByName('fav_icecream');
+        for(i = 0; i < voteResult.length; i++) {
+                if(voteResult[i].checked)
+                OneSignal.push(function () {
+                OneSignal.sendOutcome(voteResult[i]).value;
+                });
         });
     });
 
