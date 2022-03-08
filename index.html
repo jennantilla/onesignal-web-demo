@@ -107,7 +107,7 @@
     const tagUser = document.getElementById("tag-btn");
     const fName = document.getElementById("fname").value;
     const lName = document.getElementById("lname").value;
-    untagUser.addEventListener("click", () => {
+    tagUser.addEventListener("click", () => {
         console.log("first name: ", fName);
         OneSignal.push(function () {
             OneSignal.sendTags({
