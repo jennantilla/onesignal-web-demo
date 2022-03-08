@@ -40,6 +40,23 @@
     </div>
     <br>
     <h3>Outcomes</h3>
+    <h4>What's your favorite type of ice cream?</h4>
+    <div>
+        <form id="voteOutcomes">
+            <input type="radio" id="vanilla" name="fav_icecream" value="vanilla">
+            <label for="html">Vanilla</label><br>
+            <input type="radio" id="chocolate" name="fav_icecream" value="chocolate">
+            <label for="css">Chocolate</label><br>
+            <input type="radio" id="strawberry" name="fav_icecream" value="strawberry">
+            <label for="javascript">Strawberry</label>
+            <input type="radio" id="other" name="fav_icecream" value="other">
+            <label for="javascript">There's more than 3 types of ice cream, silly</label>
+        </form>
+        <div>
+            <button id="outcome-btn">click to tag yourself!</button>
+        </div>
+    </div>
+    
     <div>
     <button id="outcome-btn">click to send outcome</button>
     </div>
@@ -134,9 +151,11 @@
     // Send Outcome
     const outcome = document.getElementById("outcome-btn");
     outcome.addEventListener("click", () => {
+        const voteResult = document.getElementById("voteOutcomes").value;
+        console.log(voteResult);
         OneSignal.push(function () {
             console.log("button clicked!");
-            OneSignal.sendOutcome("newWebOutcome");
+            OneSignal.sendOutcome("voteResult");
             console.log("Outcome sent!");
         });
     });
