@@ -111,8 +111,8 @@
         console.log("first name: ", fName);
         OneSignal.push(function () {
             OneSignal.sendTags({
-            fName: "",
-            lName: "",
+            fName: fName,
+            lName: lName,
             }).then(function (tagsSent) {
             console.log(tagsSent);
             });
