@@ -22,9 +22,6 @@
     <div>
         <a href="path1.html">Another page</a>
     </div>
-    <div>
-        <h3>Add your name!</h3>
-    </div>
     <h3>Tagging</h3>
     <div>
         <form>
@@ -39,15 +36,16 @@
     <div>
     <button id="untag-btn">click to untag yourself</button>
     </div>
-    
+    <br>
+    <h3>Outcomes</h3>
     <div>
     <button id="outcome-btn">click to send outcome</button>
     </div>
     
     <!-- Modal with Custom Link -->
     <div>
-        <h3>Modal to Subscribe with Link</h3>
-        <button id="myBtn">Open</button>
+        <h3>Modal to Subscribe with Custom Link</h3>
+        <button id="openBtn">Open</button>
         <br>
     </div>
     <!-- The Modal -->
@@ -70,7 +68,7 @@
     var modal = document.getElementById("myModal");
 
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+    var btn = document.getElementById("openBtn");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -105,8 +103,8 @@
 
     // Tag User        
     const tagUser = document.getElementById("tag-btn");
-    const fName = document.getElementById("fname");
-    const lName = document.getElementById("lname");
+    const fName = document.getElementById("fname").value;
+    const lName = document.getElementById("lname").value;
     tagUser.addEventListener("click", () => {
         OneSignal.push(function() {            
             OneSignal.sendTags({
