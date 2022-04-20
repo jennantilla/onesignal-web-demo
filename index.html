@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
-            notificationClickHandlerMatch: 'origin',
-            notificationClickHandlerAction: 'focus',
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+              appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
+                notificationClickHandlerMatch: 'origin',
+                    notificationClickHandlerAction: 'focus',
+              safari_web_id: "web.onesignal.auto.4c35e1cb-920a-4e68-be7d-eea8363a1cf4",
+              notifyButton: {
+                enable: true,
+              },
+            });
         });
-      });
     </script>
     <link rel="stylesheet" href="styles.css">
 <title>Web Push Demo</title>
