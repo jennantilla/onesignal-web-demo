@@ -5,30 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-              appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
-              safari_web_id: "web.onesignal.auto.4c35e1cb-920a-4e68-be7d-eea8363a1cf4",
-                promptOptions: {
-                    customlink: {
-                        enabled: true, /* Required to use the Custom Link */
-                        style: "link", /* Has value of 'button' or 'link' */
-                        size: "large", /* One of 'small', 'medium', or 'large' */
-                        color: {
-                          button: '#E12D30', /* Color of the button background if style = "button" */
-                          text: '#FFFFFF', /* Color of the prompt's text */
-                        },
-                        text: {
-                          subscribe: "Subscribe to push notifications", /* Prompt's text when not subscribed */
-                          unsubscribe: "Unsubscribe from push notifications", /* Prompt's text when subscribed */
-                          explanation: "Get updates from all sorts of things that matter to you", /* Optional text appearing before the prompt button */
-                        },
-                        unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
-                      }
-              },
-            });
-        });
+        var OneSignal = window.OneSignal || [];
+        var initConfig = {
+        appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
+        notifyButton: {
+            enable: true
+        },
+    };
+    OneSignal.push(function () {
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal-web-demo/' };
+        OneSignal.SERVICE_WORKER_PATH = 'onesignal-web-demo/OneSignalSDKWorker.js'
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal-web-demo/OneSignalSDKUpdaterWorker.js'
+        OneSignal.init(initConfig);
+    });
     </script>
     <link rel="stylesheet" href="styles.css">
 <title>Web Push Demo</title>
