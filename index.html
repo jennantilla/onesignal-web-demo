@@ -18,22 +18,27 @@
         var initConfig = {
         appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
             promptOptions: {
-              slidedown: {
-                prompts: [
-                  {
-                    type: "push", // current types are "push" & "category"
-                    autoPrompt: true,
-                    text: {
-                      /* limited to 90 characters */
-                      actionMessage: "We'd like to show you notifications for the latest news and updates.",
-                      /* acceptButton limited to 15 characters */
-                      acceptButton: "Allow",
-                      /* cancelButton limited to 15 characters */
-                      cancelButton: "Cancel"
-                    },
-                  }
-               ]
-              }
+      slidedown: {
+        prompts: [
+          {
+            type: "push", // current types are "push" & "category"
+            autoPrompt: true,
+            text: {
+              /* limited to 90 characters */
+              actionMessage: "We'd like to show you notifications for the latest news and updates.",
+              /* acceptButton limited to 15 characters */
+              acceptButton: "Allow",
+              /* cancelButton limited to 15 characters */
+              cancelButton: "Cancel"
+            },
+            delay: {
+              pageViews: 1,
+              timeDelay: 20
+            }
+          }
+        ]
+      }
+    }
     };
     OneSignal.push(function () {
         OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal-web-demo/' };
