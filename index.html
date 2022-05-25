@@ -21,22 +21,6 @@
       appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
     });
   });
-    
-    const callback = function (payload) {
-console.log("OneSignal notification opened!");
-
-OneSignal.getUserId(function (user_id) {
-ga("send", {
-hitType: "event",
-eventCategory: 'OSNotification',
-eventAction: 'u_id ' + user_id,
-eventLabel: 'n_id ' + payload.id
-});
-});
-
-// Allow future opens to also trigger the callback
-OneSignal.addListenerForNotificationOpened(callback);
-};
 </script>
     
 <!--     Custom Code Setup -->
@@ -75,22 +59,7 @@ OneSignal.addListenerForNotificationOpened(callback);
         OneSignal.init(initConfig);
     });
     </script> -->
-    const callback = function (payload) {
-console.log("OneSignal notification opened!");
-
-OneSignal.getUserId(function (user_id) {
-ga("send", {
-hitType: "event",
-eventCategory: 'OSNotification',
-eventAction: 'u_id ' + user_id,
-eventLabel: 'n_id ' + payload.id
-});
-});
-
-// Allow future opens to also trigger the callback
-OneSignal.addListenerForNotificationOpened(callback);
-};
-    <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="styles.css">
 <title>Web Push Demo</title>
 </head>
 <body>
