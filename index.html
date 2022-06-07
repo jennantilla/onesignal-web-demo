@@ -87,7 +87,7 @@
         <button id="tag-btn">click to tag yourself!</button>
     </div>
     <br>
-    <div>
+<!--     <div>
     <button id="untag-btn">click to untag yourself</button>
     </div>
     <br>
@@ -107,7 +107,7 @@
             <input type="submit">
         </form>
     </div>
-    
+     -->
     <!-- Modal with Custom Link -->
     <div>
         <h3>Modal to Subscribe with Custom Link</h3>
@@ -177,29 +177,29 @@
     });
         
     // Remove Tags
-    const untagUser = document.getElementById("untag-btn");
-    untagUser.addEventListener("click", () => {
-        OneSignal.push(function () {
-            OneSignal.sendTags({
-            fName: "",
-            lName: "",
-            }).then(function (tagsSent) {
-            console.log(tagsSent);
-            });
-        });
-    });
+//     const untagUser = document.getElementById("untag-btn");
+//     untagUser.addEventListener("click", () => {
+//         OneSignal.push(function () {
+//             OneSignal.sendTags({
+//             fName: "",
+//             lName: "",
+//             }).then(function (tagsSent) {
+//             console.log(tagsSent);
+//             });
+//         });
+//     });
 
     // Send Outcome
-    const outcome = document.getElementById("voteOutcomes");
-    outcome.addEventListener("submit", () => {
-        const voteResult = document.getElementsByName('fav_icecream');
-        for(i = 0; i < voteResult.length; i++) {
-                if(voteResult[i].checked)
-                    OneSignal.push(function () {
-                    OneSignal.sendOutcome(voteResult[i].value);
-                });
-        };
-    });
+//     const outcome = document.getElementById("voteOutcomes");
+//     outcome.addEventListener("submit", () => {
+//         const voteResult = document.getElementsByName('fav_icecream');
+//         for(i = 0; i < voteResult.length; i++) {
+//                 if(voteResult[i].checked)
+//                     OneSignal.push(function () {
+//                     OneSignal.sendOutcome(voteResult[i].value);
+//                 });
+//         };
+//     });
 
     // subscriptionChange Event
     OneSignal.push(function() {
