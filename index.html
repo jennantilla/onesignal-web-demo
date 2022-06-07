@@ -33,7 +33,7 @@
         prompts: [
           {
             type: "category",
-            autoPrompt: true,
+            autoPrompt: false,
             text: {
               actionMessage: "We'd like to show you notifications for the latest news and updates.",
               acceptButton: "Allow",
@@ -44,10 +44,10 @@
               positiveUpdateButton:"Save Preferences",
               updateMessage: "Update your push notification subscription preferences.",
             },
-            delay: {
-              pageViews: 3,
-              timeDelay: 5
-            },
+//             delay: {
+//               pageViews: 3,
+//               timeDelay: 5
+//             },
             categories: [
               {
                 tag: "dank_memes",
