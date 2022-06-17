@@ -13,12 +13,11 @@
       notifyButton: {
         enable: true,
       },
-        OneSignal.push(function () {
+        
         OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal-web-demo/' };
         OneSignal.SERVICE_WORKER_PATH = 'onesignal-web-demo/OneSignalSDKWorker.js'
         OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal-web-demo/OneSignalSDKUpdaterWorker.js'
         OneSignal.init(initConfig);
-    });
   });
 </script>
   <h1>Different prompts on different pages</h1>
