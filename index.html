@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1T4J5ZSK8X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T4J5ZSK8X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-1T4J5ZSK8X');
-</script>
+      gtag('config', 'G-1T4J5ZSK8X');
+    </script>
     
     
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5BF8XFB');</script>
-<!-- End Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5BF8XFB');</script>
+    <!-- End Google Tag Manager -->
     
+<!-- Uncomment to use custom code init instead of Google Tag Manager     -->
+
+    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script> -->
+
+    <!--     Typical Site Setup -->
+    <!-- <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
+        });
+      });
+    </script> -->
     
-<!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script> -->
-<!--     Typical Site Setup -->
-<!-- <script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
-    });
-  });
-</script> -->
     
 <!--     Custom Code Setup -->
 <!--     <script>
@@ -119,73 +123,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
         <button id="tag-btn">click to tag yourself!</button>
     </div>
-    <br>
-<!--     <div>
-    <button id="untag-btn">click to untag yourself</button>
-    </div> -->
-    
-<!--     <h3>Outcomes</h3>
-    <h4>What's your favorite type of ice cream?</h4>
+<!--     <br>
     <div>
-        <form id="voteOutcomes">
-            <input type="radio" id="vanilla" name="fav_icecream" value="vanilla">
-            <label for="html">Vanilla</label><br>
-            <input type="radio" id="chocolate" name="fav_icecream" value="chocolate">
-            <label for="css">Chocolate</label><br>
-            <input type="radio" id="strawberry" name="fav_icecream" value="strawberry">
-            <label for="javascript">Strawberry</label><br>
-            <input type="radio" id="other" name="fav_icecream" value="other">
-            <label for="javascript">There are more than 3 types of ice cream, silly</label><br>
-            <br>
-            <input type="submit">
-        </form>
-    </div> -->
-
-    <!-- Modal with Custom Link -->
-<!--     <div>
-        <h3>Modal to Subscribe with Custom Link</h3>
-        <button id="openBtn">Open</button>
-        <br>
-    </div> -->
-    <!-- The Modal -->
-<!--     <div id="myModal" class="modal"> -->
-      <!-- Modal content -->
-<!--       <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class='onesignal-customlink-container'></div>
-      </div>
+    <button id="untag-btn">click to untag yourself</button>
     </div> -->
     
     
     <script>
-    // Modal JS
-    // Get the modal
-//     var modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
-//     var btn = document.getElementById("openBtn");
-
-    // Get the <span> element that closes the modal
-//     var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-//     btn.onclick = function() {
-//       modal.style.display = "block";
-//     }
-
-    // When the user clicks on <span> (x), close the modal
-//     span.onclick = function() {
-//       modal.style.display = "none";
-//     }
-
-    // When the user clicks anywhere outside of the modal, close it
-//     window.onclick = function(event) {
-//       if (event.target == modal) {
-//         modal.style.display = "none";
-//       }
-//     }
-
-
         
     // <!-- OneSignal Methods -->
 
@@ -225,30 +169,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 //         });
 //     });
 
-    // Send Outcome
-//     const outcome = document.getElementById("voteOutcomes");
-//     outcome.addEventListener("submit", () => {
-//         const voteResult = document.getElementsByName('fav_icecream');
-//         for(i = 0; i < voteResult.length; i++) {
-//                 if(voteResult[i].checked)
-//                     OneSignal.push(function () {
-//                     OneSignal.sendOutcome(voteResult[i].value);
-//                 });
+   
+
+//     // subscriptionChange Event
+//     OneSignal.push(function() {
+//       // Occurs when the user's subscription changes to a new value.
+//       OneSignal.on('subscriptionChange', function (isSubscribed) {
+//         console.log("The user's subscription state is now:", isSubscribed);
+//           if (isSubscribed) {
+//         console.log("Add whatever else you need to accomplish in this listener");
 //         };
-//     });
+//       });
 
-    // subscriptionChange Event
-    OneSignal.push(function() {
-      // Occurs when the user's subscription changes to a new value.
-      OneSignal.on('subscriptionChange', function (isSubscribed) {
-        console.log("The user's subscription state is now:", isSubscribed);
-          if (isSubscribed) {
-        console.log("Add whatever else you need to accomplish in this listener");
-        };
-      });
-
-      // This event can be listened to via the `on()` or `once()` listener.
-    });   
+//       // This event can be listened to via the `on()` or `once()` listener.
+//     });   
 
     // Tag User based on browser type                
     // Example from Stackoverflow: https://stackoverflow.com/questions/11219582/how-to-detect-my-browser-version-and-operating-system-using-javascript
