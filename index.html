@@ -141,20 +141,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
     }        
 
-    // Tag User with first and last names      
-    const tagUser = document.getElementById("tag-btn");
-    tagUser.addEventListener("click", () => {
-        const fName = document.getElementById("fname").value;
-        const lName = document.getElementById("lname").value;
-        OneSignal.push(function () {
-            OneSignal.sendTags({
-            fName: fName,
-            lName: lName,
-            }).then(function (tagsSent) {
-            console.log(tagsSent);
-            });
-        });
-    });
+//     // Tag User with first and last names      
+//     const tagUser = document.getElementById("tag-btn");
+//     tagUser.addEventListener("click", () => {
+//         const fName = document.getElementById("fname").value;
+//         const lName = document.getElementById("lname").value;
+//         OneSignal.push(function () {
+//             OneSignal.sendTags({
+//             fName: fName,
+//             lName: lName,
+//             }).then(function (tagsSent) {
+//             console.log(tagsSent);
+//             });
+//         });
+//     });
         
     // Remove Tags
 //     const untagUser = document.getElementById("untag-btn");
@@ -186,30 +186,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Tag User based on browser type                
     // Example from Stackoverflow: https://stackoverflow.com/questions/11219582/how-to-detect-my-browser-version-and-operating-system-using-javascript
-    var os = "Unknown OS";
-    if (navigator.userAgent.indexOf("Win") != -1) os = "Windows";
-    if (navigator.userAgent.indexOf("Mac") != -1) os = "Macintosh";
-    if (navigator.userAgent.indexOf("Linux") != -1) os = "Linux";
-    if (navigator.userAgent.indexOf("Android") != -1) os = "Android";
-    if (navigator.userAgent.indexOf("like Mac") != -1) os = "iOS";
-    console.log('Your os: ' + os);
+//     var os = "Unknown OS";
+//     if (navigator.userAgent.indexOf("Win") != -1) os = "Windows";
+//     if (navigator.userAgent.indexOf("Mac") != -1) os = "Macintosh";
+//     if (navigator.userAgent.indexOf("Linux") != -1) os = "Linux";
+//     if (navigator.userAgent.indexOf("Android") != -1) os = "Android";
+//     if (navigator.userAgent.indexOf("like Mac") != -1) os = "iOS";
+//     console.log('Your os: ' + os);
 
-    var browserType = "Unknown Browser Type";
-    if (navigator.userAgent.indexOf("Safari") != -1) browserType = "Safari";
-    if (navigator.userAgent.indexOf("Chrome") != -1) browserType = "Chrome";
-    if (navigator.userAgent.indexOf("OPR") != -1) browserType = "Opera";
-    if (navigator.userAgent.indexOf("Firefox") != -1) browserType = "Firefox";
-    console.log('Your Browser: ' + browserType);
+//     var browserType = "Unknown Browser Type";
+//     if (navigator.userAgent.indexOf("Safari") != -1) browserType = "Safari";
+//     if (navigator.userAgent.indexOf("Chrome") != -1) browserType = "Chrome";
+//     if (navigator.userAgent.indexOf("OPR") != -1) browserType = "Opera";
+//     if (navigator.userAgent.indexOf("Firefox") != -1) browserType = "Firefox";
+//     console.log('Your Browser: ' + browserType);
 
-    OneSignal.push(function() {
-      OneSignal.sendTags({
-        os: os,
-        browserType: browserType,
-      }).then(function(tagsSent) {
-        // Callback called when tags have finished sending 
-        console.log("tagsSent: ", tagsSent);
-      });
-    });     
+//     OneSignal.push(function() {
+//       OneSignal.sendTags({
+//         os: os,
+//         browserType: browserType,
+//       }).then(function(tagsSent) {
+//         // Callback called when tags have finished sending 
+//         console.log("tagsSent: ", tagsSent);
+//       });
+//     });     
     </script>
 </body>
 </html>
