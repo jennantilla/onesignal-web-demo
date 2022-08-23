@@ -29,21 +29,20 @@
 
     <!--     Uncomment for Typical Site Setup -->
     <script>
-      console.log("Using Typical Site Setup");
+      console.log("Using Typical Site Setup with Service Woker customizations");
       var OneSignal = window.OneSignal || [];
-      var initConfig = {
+      OneSignal.init = {
         appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
         notifyButton: {
             enable: true
         },
       };
-        
         OneSignal.push(function () {
         OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal-web-demo/' };
         OneSignal.SERVICE_WORKER_PATH = 'onesignal-web-demo/OneSignalSDKWorker.js'
         OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal-web-demo/OneSignalSDKUpdaterWorker.js'
-        OneSignal.init(initConfig);
     });
+        
     </script>
     
     
