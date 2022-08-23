@@ -103,7 +103,7 @@
 <!--     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BF8XFB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --> -->
+<!-- End Google Tag Manager (noscript) -->
     
     <h1>OneSignal Web Demo</h1>
     <!-- Subscribe image with Category Slidedown-->
@@ -142,6 +142,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const bellBtn = document.getElementById("bell-img");
     bellBtn.onclick = function() {
         OneSignal.push(function() {
+            console.log("Showing Category Slidedown!");
             OneSignal.showCategorySlidedown();
         });
     }        
