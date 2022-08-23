@@ -28,24 +28,20 @@
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 
     <!--     Uncomment for Typical Site Setup -->
-    <script>
-      console.log("!!!Using Typical Site Setup with Service Worker customizations!!!");
+<!--     <script>
+      console.log("Using Typical Site Setup");
       window.OneSignal = window.OneSignal || [];
       OneSignal.push(function() {
         OneSignal.init({
           appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
         });
-        OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal-web-demo/' };
-        OneSignal.SERVICE_WORKER_PATH = 'onesignal-web-demo/OneSignalSDKWorker.js'
-        OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal-web-demo/OneSignalSDKUpdaterWorker.js'
       });
-      
-   
-    </script>
+</script> -->
     
     
 <!--     Uncomment for Custom Code Setup -->
-<!--     <script>
+    <script>
+        console.log("Using Custom Code Setup");
         var OneSignal = window.OneSignal || [];
         var initConfig = {
         appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
@@ -95,16 +91,19 @@
         OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal-web-demo/OneSignalSDKUpdaterWorker.js'
         OneSignal.init(initConfig);
     });
-    </script> -->
-     <link rel="stylesheet" href="styles.css">
-<title>Web Push Demo</title>
-</head>
-<body>
+    </script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Web Push Demo</title>
+
+    </head>
+
+    <body>
     
-    <!-- Google Tag Manager (noscript) -->
+<!--     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BF8XFB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!-- End Google Tag Manager (noscript) --> -->
     
     <h1>OneSignal Web Demo</h1>
     <!-- Subscribe image with Category Slidedown-->
