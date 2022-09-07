@@ -43,83 +43,61 @@
     <script>
         console.log("Using Custom Code Setup");
         
-        //conditionally init based on path
         var pathArray = window.location.pathname.split('/');
         console.log("This is the current path" + pathArray[2]);
         
         var OneSignal = window.OneSignal || [];
-        if (pathArray[2] == 'es') {
-            console.log("Init with ES prompt");
-             
-                var initConfig = {
-                appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
+        var initConfig = {
+            appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
                 promptOptions: {
                   slidedown: {
                     prompts: [
                       {
-                        type: "push", // current types are "push" & "category"
-                        autoPrompt: true,
+                        type: "category",
+                        autoPrompt: false,
                         text: {
-                          /* limited to 90 characters */
-                          actionMessage: "Nos gustaría mostrarle notificaciones de las últimas noticias y actualizaciones.",
-                          /* acceptButton limited to 15 characters */
-                          acceptButton: "Permitir",
-                          /* cancelButton limited to 15 characters */
-                          cancelButton: "Cancelar"
+                          actionMessage: "We'd like to show you notifications for the latest news and updates.",
+                          acceptButton: "Allow",
+                          cancelButton: "Cancel",
+
+                          /* CATEGORY SLIDEDOWN SPECIFIC TEXT */
+                          negativeUpdateButton:"Cancel",
+                          positiveUpdateButton:"Save Preferences",
+                          updateMessage: "Update your push notification subscription preferences.",
                         },
-                        delay: {
-                          pageViews: 1,
-                          timeDelay: 20
-                        }
+                         delay: {
+                           pageViews: 1,
+                           timeDelay: 5
+                         },
+                        categories: [
+                          {
+                            tag: "dank_memes",
+                            label: "Dank Memes"
+                          },
+                          {
+                            tag: "dad_jokes",
+                            label: "Dad Jokes"
+                          },
+                          {
+                            tag: "animal_pics",
+                            label: "Cute Animal Pics",
+                          }
+                        ]
                       }
                     ]
                   }
-                }  
-                OneSignal.push(function () {
+                }
+                    };
+
+                    OneSignal.push(function () {
                     OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal-web-demo/' };
                     OneSignal.SERVICE_WORKER_PATH = 'onesignal-web-demo/OneSignalSDKWorker.js'
                     OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal-web-demo/OneSignalSDKUpdaterWorker.js'
                     OneSignal.init(initConfig);
                 });
 
-        }
-        else {
-          console.log("Init with CA prompt");
-                var initConfig = {
-                appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
-                promptOptions: {
-              slidedown: {
-                prompts: [
-                  {
-                    type: "push", // current types are "push" & "category"
-                    autoPrompt: true,
-                    text: {
-                      /* limited to 90 characters */
-                      actionMessage: "🔔 Vols rebre totes les últimes notícies d'ElNacional.cat al teu navegador ❓",
-                      /* acceptButton limited to 15 characters */
-                      acceptButton: "Sí, gràcies! 👏",
-                      /* cancelButton limited to 15 characters */
-                      cancelButton: "CDe moment, no"
-                    },
-                    delay: {
-                      pageViews: 1,
-                      timeDelay: 20
-                    }
-                  }
-                ]
-              }
-            }
-            OneSignal.push(function () {
-                    OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal-web-demo/' };
-                    OneSignal.SERVICE_WORKER_PATH = 'onesignal-web-demo/OneSignalSDKWorker.js'
-                    OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal-web-demo/OneSignalSDKUpdaterWorker.js'
-                    OneSignal.init(initConfig);
-                });
 
-        }
-        }
-
-let page_topic = 'ca';
+let page_topic = 'en';
 console.log("Page topic: " + page_topic);
 
 OneSignal.push(function() {
