@@ -45,10 +45,12 @@
         
         //conditionally init based on path
         var pathArray = window.location.pathname.split('/');
-        console.log("This is the current path" + pathArray);
+        console.log("This is the current path" + pathArray[2);
+        
+        var OneSignal = window.OneSignal || [];
         if (pathArray[2] == 'es') {
             console.log("Init with ES prompt");
-             var OneSignal = window.OneSignal || [];
+             
                 var initConfig = {
                 appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
                 promptOptions: {
@@ -83,7 +85,6 @@
         }
         else {
           console.log("Init with CA prompt");
-          var OneSignal = window.OneSignal || [];
                 var initConfig = {
                 appId: "000b64e3-4806-4e2c-b23a-3463f9f058fd",
                 promptOptions: {
