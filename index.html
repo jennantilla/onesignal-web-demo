@@ -46,7 +46,7 @@
         //conditionally init based on path
         var pathArray = window.location.pathname.split('/');
         console.log("This is the current path" + pathArray);
-        if (pathArray == 'es') {
+        if (pathArray[2] == 'es') {
             console.log("Init with ES prompt");
              var OneSignal = window.OneSignal || [];
                 var initConfig = {
